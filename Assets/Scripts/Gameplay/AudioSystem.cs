@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+namespace ArcCreate.AudioSystem 
+{
 using ManagedBass;
 using UnityEngine;
 
-namespace ArcCreate.AudioSystem {
-  public static class AudioSystem {
+  public static class AudioSystem 
+  {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
-    public static void Initialise() {
+    public static void Initialise() 
+    {
       // Code basically copied from https://github.com/2394425147/my-findings/
-
       Bass.Init();
 
       Application.quitting += Dispose;
@@ -36,7 +36,8 @@ namespace ArcCreate.AudioSystem {
       Bass.Configure((Configuration)70, false);
     }
 
-    public static void Dispose() {
+    public static void Dispose() 
+    {
       Bass.Free();
 
       Application.quitting -= Dispose;

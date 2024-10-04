@@ -1,45 +1,51 @@
-using System;
-using UnityEngine;
+namespace ArcCreate.Gameplay.Hitsound 
+{
 using ManagedBass;
 
-namespace ArcCreate.Gameplay.Hitsound {
-  public class BassHitsoundPlayer {
+  public class BassHitsoundPlayer 
+  {
     /// <summary>
-    /// Volume of hitsound. 
+    /// Volume of hit sound. 
     /// 1.0 => normal, 0.0 => silent, >1.0 => amplified
     /// </summary>
     private float volume = 1.0f;
     private int arcClipHandle;
     private int tapClipHandle;
 
-    public BassHitsoundPlayer() {
+    public BassHitsoundPlayer() 
+    {
     }
 
-    public float Volume {
-      get => volume;
-      set => volume = value;
+    public float Volume 
+    {
+      get => this.volume;
+      set => this.volume = value;
     }
 
-    public void Dispose() {
-      Bass.ChannelStop(tapClipHandle);
-      Bass.ChannelStop(arcClipHandle);
+    public void Dispose() 
+    {
+      Bass.ChannelStop(this.tapClipHandle);
+      Bass.ChannelStop(this.arcClipHandle);
     }
 
-    public void LoadArc(byte[] pathToClip) {
-      arcClipHandle = Bass.CreateStream(pathToClip, 0, 0, BassFlags.Prescan | BassFlags.Default);
+    public void LoadArc(byte[] pathToClip) 
+    {
+      this.arcClipHandle = Bass.CreateStream(pathToClip, 0, 0, BassFlags.Prescan | BassFlags.Default);
     }
 
-    public void LoadTap(byte[] pathToClip) {
-      tapClipHandle = Bass.CreateStream(pathToClip, 0, 0, BassFlags.Prescan | BassFlags.Default);
+    public void LoadTap(byte[] pathToClip) 
+    {
+      this.tapClipHandle = Bass.CreateStream(pathToClip, 0, 0, BassFlags.Prescan | BassFlags.Default);
     }
 
-    public void PlayArc() {
-      Bass.ChannelPlay(arcClipHandle);
+    public void PlayArc() 
+    {
+      Bass.ChannelPlay(this.arcClipHandle);
     }
 
-    public void PlayTap() {
-      Bass.ChannelPlay(tapClipHandle);
+    public void PlayTap() 
+    {
+      Bass.ChannelPlay(this.tapClipHandle);
     }
   }
-
 }
