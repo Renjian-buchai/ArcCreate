@@ -7,8 +7,6 @@ namespace ArcCreate.AudioSystem {
   public static class AudioSystem {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
     public static void Initialise() {
-      // Currently here so that if something dies, at least it only takes down the hitsounds
-
       // Code basically copied from https://github.com/2394425147/my-findings/
 
       Bass.Init();
