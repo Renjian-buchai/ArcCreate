@@ -26,6 +26,10 @@
 !/Assets/Plugins/Native Audio/Runtime/E7.NativeAudio.asmdef
 !/Assets/Plugins/Native Audio/Runtime/E7.NativeAudio.asmdef.meta
 
+# Copyrighted Libraries
+/Assets/Plugins/Un4seen.Bass/
+/Assets/Plugins/Un4seen.Bassmix/
+
 # EmmySharp testing
 .vscode/workspace/
 test.lua
